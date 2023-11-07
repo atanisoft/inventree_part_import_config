@@ -4,14 +4,22 @@ Analog Supply Voltage:
 Architecture:
     _aliases:
         - Core Size
+Breakdown Voltage:
+    _unit: V
+Cable Entry:
+    _aliases:
+        - Tab Direction
 Capacitance:
     _unit: nF
+Clamping Voltage:
+    _unit: V
 Coil Voltage:
     _unit: V
 Color:
     _aliases:
         - Illumination Type, Color
         - Illumination Colour
+        - Illumination Color
         - Luminous Color
         - Emitted Color
 Common Pin:
@@ -20,6 +28,7 @@ Common Pin:
 Composition:
     _aliases:
         - Type
+        - Product Type
 Conductor Material:
 Connectivity:
 Connector Type:
@@ -31,6 +40,7 @@ Contact Finish:
         - Contact Finish - Mating
         - Contact Material
         - Contact plating
+        - Contact Plating
 Cross-Section:
     _unit: mm^2
 Data Rate:
@@ -74,12 +84,17 @@ Frequency:
         - Clock Frequency
         - Speed
         - Count Rate
+        - Center Frequency
     _unit: Hz
 Frequency Stability:
     _unit: ppm
 Frequency Tolerance:
     _unit: ppm
 Fuse Size:
+Gain (dBi):
+    _unit: dBi
+    _aliases:
+        - Gain
 Gain (hFE):
     _aliases:
         - DC Current Gain (hFE) (Min) @ Ic, Vce
@@ -91,6 +106,7 @@ Has Switch:
         - Internal Switch(s)
         - Switch Type
         - Switch Configuration
+        - With Switch
 Hold Current:
     _aliases:
         - Current - Hold (Ih) (Max)
@@ -103,17 +119,21 @@ Inductance:
 Input Offset Voltage:
     _aliases:
         - Voltage - Input Offset
+        - Vos Input Offset Voltage
     _unit: mV
 Input Voltage:
     _aliases:
         - Voltage - Input
         - Voltage - Input (Max)
         - Maximum Input Voltage
+        - Input Voltage, Max
     _unit: V
 Insulation Material:
 Interface:
     _aliases:
         - Data Interface
+        - Logic Type
+        - Interface Type
 Length:
     _unit: mm
 Lens Style:
@@ -130,6 +150,7 @@ Motor Type:
 Mounting Type:
     _aliases:
         - Mounting Style
+        - Termination Style
 Multiplexer Configuration:
     _aliases:
         - Multiplexer/Demultiplexer Circuit
@@ -138,11 +159,13 @@ Number of Bits:
     _aliases:
         - Number of Bits per Element
         - Resolution (Bits)
+Number of Channels:
 Number of Characters:
 Number of Circuits:
     _aliases:
         - Number of Elements
         - Number of Channels
+        - Number of Gates
 Number of Conductors:
 Number of Contacts:
     _aliases:
@@ -151,11 +174,13 @@ Number of Contacts:
         - Number of Tie Points (Total)
         - Number of contacts points
         - Number of pins
+        - Number of Positions / Contacts per Port
 Number of D/A Converters:
 Number of Drivers/Receivers:
 Number of IO Pins:
     _aliases:
         - Number of I/O
+        - Number of I/Os
 Number of Positions:
 Number of Rows:
 Number of Turns:
@@ -167,6 +192,7 @@ On Resistance:
         - Resistance - RDS(On)
         - Rds On (Max) @ Id, Vgs
         - On-State Resistance (Max)
+        - Rds On - Drain-Source Resistance
 Operating Force:
 Output Current:
     _aliases:
@@ -176,9 +202,14 @@ Output Current:
         - Current - Output / Channel
         - Current - Output High, Low
     _unit: A
+Output Supply Current:
+    _aliases:
+        - Output Current per Channel
+    _unit: mA
 Output Polarity:
     _aliases:
         - Output Configuration
+        - Polarity
 Output Type:
 Output Voltage:
     _aliases:
@@ -190,6 +221,7 @@ Package Type:
         - Package / Case
         - Termination Style
         - Mounting form
+        - Case Code - in
 Pitch:
     _aliases:
         - Pitch - Mating
@@ -201,7 +233,11 @@ Processor Type:
     _aliases:
         - Core Processor
 Protocol:
+    _aliases:
+        - Product
 Pulses per Revolution:
+    _aliases:
+        - Resolution
 RAM Size:
 Rated Current:
     _aliases:
@@ -219,6 +255,10 @@ Rated Current:
         - Collector Current (Ic)
         - Current - DC Forward (If) (Max)
         - Contact Current
+        - Id - Continuous Drain Current
+        - Ipp - Peak Pulse Current
+        - Maximum DC Current
+        - If - Forward Current
     _unit: A
 Rated Power:
     _aliases:
@@ -228,6 +268,7 @@ Rated Power:
         - Power(Watts)
         - Power Dissipation
         - Power Dissipation (Pd)
+        - Power per Element
         - Nominal load
     _unit: W
 Rated Voltage:
@@ -246,9 +287,12 @@ Rated Voltage:
         - Voltage - Collector Emitter Breakdown (Max)
         - Collector-Emitter Breakdown Voltage (Vceo)
         - Drain to Source Voltage (Vdss)
+        - Vds - Drain-Source Breakdown Voltage
         - Voltage - Breakdown (V(BR)GSS)
         - Voltage - Load
         - Nominal voltage
+        - Maximum Voltage
+        - Load Voltage Rating
     _unit: V
 Reference Type:
 Resistance:
@@ -256,12 +300,14 @@ Resistance:
         - Resistance (Ohms)
         - DC Resistance (DCR) (Max)
         - Resistor
+        - Resistor Values
     _unit: ohm
 Reverse Breakdown Voltage:
     _aliases:
         - Voltage - DC Reverse (Vr) (Max)
         - Voltage - Zener (Nom) (Vz)
         - Zener Voltage (Nom)
+        - Vr - Reverse Voltage
     _unit: V
 Rotation Angle:
     _aliases:
@@ -282,12 +328,17 @@ Size:
     _aliases:
         - Size / Dimension
         - Lens Size
+        - Package / Case
+        - Case Code - in
 Slew Rate:
     _unit: V/us
+    _aliases:
+        - SR - Slew Rate
 Standard:
 Supply Current:
     _aliases:
         - Current - Supply
+        - Output Current per Channel
     _unit: mA
 Supply Voltage:
     _aliases:
@@ -296,6 +347,7 @@ Supply Voltage:
         - Voltage - Supply (Vcc/Vdd)
         - Voltage - Supply, Single (V+)
         - Voltage - Supply, Dual (V±)
+        - Supply Voltage - Max
 Switch Time:
     _aliases:
         - Switch Time (Ton, Toff) (Max)
@@ -304,8 +356,11 @@ Switch Type:
         - Circuit
         - Circuit per Deck
         - Switch Circuit
+        - Switch Function
 Taper:
 Temperature Coefficient:
+    _aliases:
+        - Class
 Thread Size:
 Tolerance:
     _unit: "%"
@@ -327,6 +382,7 @@ Wavelength:
     _aliases:
         - Wavelength - Dominant
         - Wavelength/Colour Temperature
+        - Wavelength/Color Temperature
         - Wavelength - Peak
     _unit: nm
 Working Voltage:
@@ -334,3 +390,4 @@ Working Voltage:
         - Maximum DC Volts
         - Voltage - Reverse Standoff (Typ)
     _unit: V
+Transistor Polarity:

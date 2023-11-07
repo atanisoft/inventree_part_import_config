@@ -41,11 +41,12 @@ def fix_transistor_categories(api_part: ApiPartMock):
             api_part.category_path.append("N-Channel JFETs")
         elif "P-Channel" in fet_type:
             api_part.category_path.append("P-Channel JFETs")
-    elif "FETs" in api_part.category_path[-1] or "FETs, MOSFETs" in api_part.category_path:
+    elif "FET" in api_part.category_path[-1] or 'MOSFET' in api_part.category_path:
         fet_type = api_part.parameters.get("FET Type", "")
-        if "N-Channel" in fet_type:
+        fet_pol = api_part.parameters.get("Transistor Polarity", "")
+        if "N-Channel" in fet_type or "N-Channel" in fet_pol:
             api_part.category_path.append("N-Channel MOSFETs")
-        elif "P-Channel" in fet_type:
+        elif "P-Channel" in fet_type or "P-Channel" in fet_pol:
             api_part.category_path.append("P-Channel MOSFETs")
 
 def fix_film_capacitor_mounting_type(api_part: ApiPartMock):
@@ -64,13 +65,16 @@ def fix_solder_categories(api_part: ApiPartMock):
 def fix_usb_connector_categories(api_part: ApiPartMock):
     if api_part.category_path[-1] in {"USB, DVI, HDMI Connectors", "USB Connectors"}:
         if connector_type := api_part.parameters.get("Connector Type"):
-            for subcategory in ("USB-A", "USB-B", "USB-C"):
+            for subcategory in ("USB-A", "USB-B", "USB-C", "Micro-B"):
                 if subcategory in connector_type:
                     api_part.category_path.append(subcategory)
                     break
         elif connector_type := api_part.parameters.get("Type"):
             if "Type C" in connector_type:
                 api_part.category_path.append("USB-C")
+            elif 'Type B' in connector_type and 'Micro USB Type B' in api_part.parameters.get('Product'):
+                # Mouser lists the type as "Type B" but the Product contains Micro...
+                api_part.category_path.append('Micro-B')
 
 def fix_lcsc_pin_headers(api_part: ApiPartMock):
     if pin_structure := api_part.parameters.get("Pin Structure"):
@@ -168,3 +172,4 @@ MOUNTING_TYPE_MAP = {
 def fix_mounting_type_terminology(api_part: ApiPartMock):
     if mounting := api_part.parameters.get("Electrical mounting"):
         api_part.parameters["Mounting Type"] = MOUNTING_TYPE_MAP.get(mounting, mounting)
+

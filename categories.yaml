@@ -1,6 +1,12 @@
 Electronics:
     _description: "Electronic Components"
     _structural: true
+    Antennas:
+        _parameters:
+            - Frequency
+            - Gain (dBi)
+            - Impedance
+            - Rated Power
     Cables and Wires:
         _structural: true
         Cable Assemblies:
@@ -64,14 +70,30 @@ Electronics:
         Connector Housings:
             _aliases:
                 - Rectangular Connector Housings
+                - "Headers & Wire Housings"
             _parameters:
                 - Connector Type
                 - Number of Contacts
                 - Number of Rows
+                - Pitch
+        Memory Card Connectors:
+        Pin Headers:
+            _parameters:
+                - Number of Contacts
+                - Number of Rows
+                - Pitch
+        Pin Sockets:
+            _parameters:
+                - Number of Contacts
+                - Number of Rows
+                - Pitch
+            _aliases:
+                - Female Headers
         Interface:
             _aliases:
                 - USB, DVI, HDMI Connectors
                 - USB Connectors
+                - Ethernet Connectors
             _description: "Connectors for Digital Interfaces"
             _structural: true
             _parameters: 
@@ -79,7 +101,15 @@ Electronics:
                 - Number of Contacts
             USB-A:
             USB-B:
+            Micro-B:
             USB-C:
+            Ethernet:
+                _aliases:
+                    - "Modular Connectors / Ethernet Connectors"
+                _parameters:
+                    - Cable Entry
+                    - Rated Current
+                    - Rated Voltage
         Jumpers:
             _aliases:
                 - Shunts, Jumpers
@@ -111,6 +141,17 @@ Electronics:
                 _aliases:
                     - Headers, Receptacles, Female Sockets
                 _description: "Sockets, Female Rectangular Connectors"
+        Terminal Blocks:
+            _parameters:
+                - Mounting Type
+                - Connector Type
+                - Number of Contacts
+                - Pitch
+                - Rated Current
+                - Rated Voltage
+                - Contact Finish
+            _aliases:
+                - Screw terminal
     Crystals, Oscillators:
         _structural: true
         _parameters:
@@ -141,6 +182,7 @@ Electronics:
                 _aliases: 
                     - LED Indication
                     - Standard LEDs - Through Hole
+                    - Standard LEDs - SMD
                     - Light Emitting Diodes (LED)
                 _parameters:
                     - Wavelength
@@ -160,6 +202,8 @@ Electronics:
             _parameters:
                 - Reverse Breakdown Voltage
                 - Rated Current
+            _aliases:
+                - "Schottky Diodes & Rectifiers"
         Standard:
             _aliases:
                 - Single Diodes
@@ -168,13 +212,24 @@ Electronics:
             _parameters:
                 - Reverse Breakdown Voltage
                 - Rated Current
+        Switching:
+            _aliases:
+                - Diodes - General Purpose, Power, Switching
+                - Switching Diode
+            _description: "Switching Diodes"
+            _parameters:
+                - Reverse Breakdown Voltage
+                - Rated Current
         TVS:
             _aliases:
+                - "ESD Suppressors / TVS Diodes"
                 - Transient Voltage Suppressors (TVS)
             _description: "Transient-Voltage-Suppression Diodes"
             _parameters:
                 - Working Voltage
                 - Rated Current
+                - Breakdown Voltage
+                - Clamping Voltage
         Zener:
             _aliases:
                 - Zener Diodes
@@ -192,6 +247,9 @@ Electronics:
             _parameters:
                 - Number of Contacts
                 - Size
+        Development Kits:
+            _aliases:
+                - Multiprotocol Development Tools
         Encoders:
             _parameters:
                 - Mounting Type
@@ -234,6 +292,8 @@ Electronics:
                 - Coil Voltage
                 - Rated Current
                 - Rated Voltage
+            _aliases:
+                - RF Relays
         Slide Potentiometers:
             _parameters:
                 - Mounting Type
@@ -305,10 +365,19 @@ Electronics:
                 - Input Offset Voltage
                 - Supply Current
                 - Supply Voltage
+            Current Sense Amplifiers:
+                _aliases:
+                    - Current-Sensing Amplifiers
             Operational Amplifiers:
                 _aliases:
                     - Operational Amplifier
+                    - "Operational Amplifiers - Op Amps"
             Instrumentation Amplifiers:
+        BatteryManagement:
+            _description: "Battery Management ICs"
+            _aliases:
+                - Battery Management
+                - Battery Management ICs
         Audio:
             _description: "Audio ICs"
         Data Acquisition:
@@ -349,6 +418,13 @@ Electronics:
                     - Multiplexer Configuration
                     - Switch Time
                     - Supply Voltage
+            Comparators:
+                _structural: True
+                _parameters:
+                    - Number of Channels
+                    - Output Supply Current
+                    - Supply Voltage
+                Analog Comparators:
             Audio Codecs:
                 _parameters:
                     - Number of Bits
@@ -357,6 +433,24 @@ Electronics:
             IO Expanders:
                 _aliases:
                     - I/O Expanders
+                    - Interface - I/O Expanders
+                _parameters:
+                    - Interface
+                    - Number of IO Pins
+                    - Output Current
+                    - Supply Voltage
+            LED Display Drivers:
+                _aliases:
+                    - LED Drivers
+            Specialized Controllers:
+                _aliases:
+                    - Interface - Specialized
+                _parameters:
+                    - Interface
+                    - Number of IO Pins
+                    - Output Current
+                    - Supply Voltage
+            Touch Screen Controllers:
                 _parameters:
                     - Interface
                     - Number of IO Pins
@@ -365,6 +459,8 @@ Electronics:
             Transceivers:
                 _aliases:
                     - Drivers, Receivers, Transceivers
+                    - CAN Interface IC
+                    - RS-485 Interface IC
                 _parameters:
                     - Protocol
                     - Duplex
@@ -404,6 +500,9 @@ Electronics:
                 _parameters:
                     - Number of Bits
                     - Output Type
+            Voltage Level:
+                _aliases:
+                    - Level Shifters
         Memory:
             _description: "Memory ICs"
         Microcontrollers:
@@ -417,9 +516,18 @@ Electronics:
                 - EEPROM Size
                 - RAM Size
                 - Supply Voltage
+            _aliases:
+                - WiFi Modules - 802.11
+                - WiFi Modules
+                - Multiprotocol Modules
+                - RF System on a Chip - SoC
+                - Microcontroller Units (MCUs/MPUs/SOCs)
         Motor Drivers:
             _aliases:
                 - Motor Drivers, Controllers
+                - Motor Driver ICs
+                - Ignition Controllers & Drivers
+                - "Motor / Motion / Ignition Controllers & Drivers"
             _parameters:
                 - Motor Type
                 - Output Current
@@ -433,12 +541,16 @@ Electronics:
                 - Rated Current
                 - Output Current
                 - Supply Voltage
+            _aliases:
+                - Optocouplers - Logic Output
+                - Transistor Output Optocouplrs
         Power:
             _description: "Power ICs"
             Low Dropout Regulators:
                 _aliases:
                     - Linear, Low Drop Out (LDO) Regulators
                     - Linear Voltage Regulators (LDO)
+                    - LDO Voltage Regulators
                 _parameters:
                     - Input Voltage
                     - Output Voltage
@@ -446,6 +558,13 @@ Electronics:
                     - Output Polarity
                     - Output Type
                     - Dropout Voltage
+            Linear Voltage Regulators:
+                _parameters:
+                    - Input Voltage
+                    - Output Voltage
+                    - Output Current
+                    - Output Polarity
+                    - Output Type
             DC-DC Converters:
                 _aliases:
                     - DC DC Converters
@@ -477,6 +596,10 @@ Electronics:
                     - Tolerance
                     - Temperature Coefficient
 
+        TemperatureSensors:
+            _description: "Temperature Sensors"
+            _aliases:
+                - Board Mount Temperature Sensors
     Passives:
         _description: "Passive Components"
         _structural: true
@@ -523,6 +646,7 @@ Electronics:
             _aliases:
                 - Fixed Inductors
                 - Color Ring Inductors/Through Hole Inductors
+                - Power Inductors - SMD
             _parameters:
                 - Inductance
                 - Tolerance
@@ -534,6 +658,9 @@ Electronics:
                 - Hold Current
                 - Time to Trip
                 - Rated Voltage
+            _aliases:
+                - Resettable Fuses - PPTC
+                - Resettable Fuses
         Resistors:
             _parameters:
                 - Resistance
@@ -562,6 +689,9 @@ Electronics:
                 - Rated Voltage
                 - Rated Current
                 - Rated Power
+            _aliases:
+                - Bipolar Transistors - BJT
+                - Bipolar Transistors - Pre-Biased
             NPN:
                 _description: "Bipolar NPN Transistors"
             PNP:
@@ -582,6 +712,9 @@ Electronics:
                 - On Resistance
                 - Rated Current
                 - Rated Voltage
+                - Transistor Polarity
+            _aliases:
+                - MOSFET
             N-Channel MOSFETs:
             P-Channel MOSFETs:
 Mechanical:
@@ -603,7 +736,10 @@ Mechanical:
                 - Material
                 - Plating
         Standoffs:
+            _aliases:
+                - "Standoffs & Spacers"
         Washers:
+    Heat Sinks:
     Optical:
         _structural: true
         Light Pipes:
