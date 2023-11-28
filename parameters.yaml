@@ -4,8 +4,8 @@ Analog Supply Voltage:
 Architecture:
     _aliases:
         - Core Size
-Breakdown Voltage:
-    _unit: V
+Battery Capacity:
+    _unit: mAh
 Cable Entry:
     _aliases:
         - Tab Direction
@@ -90,7 +90,12 @@ Frequency Stability:
     _unit: ppm
 Frequency Tolerance:
     _unit: ppm
+    _aliases:
+        - Tolerance
+        - Frequency Stability
 Fuse Size:
+    _aliases:
+        - Fuse Size / Group
 Gain (dBi):
     _unit: dBi
     _aliases:
@@ -99,6 +104,8 @@ Gain (hFE):
     _aliases:
         - DC Current Gain (hFE) (Min) @ Ic, Vce
         - DC Current Gain (hFE@Ic,Vce)
+        - DC Current Gain hFE Max
+        - DC Collector/Base Gain hfe Min
 Gender:
 Has Switch:
     _aliases:
@@ -120,6 +127,7 @@ Input Offset Voltage:
     _aliases:
         - Voltage - Input Offset
         - Vos Input Offset Voltage
+        - Vos - Input Offset Voltage
     _unit: mV
 Input Voltage:
     _aliases:
@@ -151,6 +159,7 @@ Mounting Type:
     _aliases:
         - Mounting Style
         - Termination Style
+        - Contact Termination
 Multiplexer Configuration:
     _aliases:
         - Multiplexer/Demultiplexer Circuit
@@ -166,6 +175,7 @@ Number of Circuits:
         - Number of Elements
         - Number of Channels
         - Number of Gates
+        - Elements per Chip
 Number of Conductors:
 Number of Contacts:
     _aliases:
@@ -175,6 +185,7 @@ Number of Contacts:
         - Number of contacts points
         - Number of pins
         - Number of Positions / Contacts per Port
+        - Number of PINs Per Row
 Number of D/A Converters:
 Number of Drivers/Receivers:
 Number of IO Pins:
@@ -232,6 +243,8 @@ Polarization:
 Processor Type:
     _aliases:
         - Core Processor
+Propagation Delay Time:
+    _unit: ns
 Protocol:
     _aliases:
         - Product
@@ -259,6 +272,8 @@ Rated Current:
         - Ipp - Peak Pulse Current
         - Maximum DC Current
         - If - Forward Current
+        - Maximum DC Collector Current
+        - Continuous Collector Current
     _unit: A
 Rated Power:
     _aliases:
@@ -270,6 +285,7 @@ Rated Power:
         - Power Dissipation (Pd)
         - Power per Element
         - Nominal load
+        - Pd - Power Dissipation
     _unit: W
 Rated Voltage:
     _aliases:
@@ -286,6 +302,8 @@ Rated Voltage:
         - Voltage Rating (Max)
         - Voltage - Collector Emitter Breakdown (Max)
         - Collector-Emitter Breakdown Voltage (Vceo)
+        - Collector-Emitter Voltage VCEO Max
+        - Collector- Emitter Voltage VCEO Max
         - Drain to Source Voltage (Vdss)
         - Vds - Drain-Source Breakdown Voltage
         - Voltage - Breakdown (V(BR)GSS)
@@ -293,6 +311,7 @@ Rated Voltage:
         - Nominal voltage
         - Maximum Voltage
         - Load Voltage Rating
+        - Operating Voltage (Max)
     _unit: V
 Reference Type:
 Resistance:
@@ -308,6 +327,8 @@ Reverse Breakdown Voltage:
         - Voltage - Zener (Nom) (Vz)
         - Zener Voltage (Nom)
         - Vr - Reverse Voltage
+        - Peak Reverse Voltage
+        - Breakdown Voltage
     _unit: V
 Rotation Angle:
     _aliases:
@@ -339,6 +360,7 @@ Supply Current:
     _aliases:
         - Current - Supply
         - Output Current per Channel
+        - Low Level Output Current
     _unit: mA
 Supply Voltage:
     _aliases:
@@ -357,6 +379,7 @@ Switch Type:
         - Circuit per Deck
         - Switch Circuit
         - Switch Function
+        - Contact Form
 Taper:
 Temperature Coefficient:
     _aliases:
@@ -365,6 +388,8 @@ Thread Size:
 Tolerance:
     _unit: "%"
 Time to Trip:
+    _aliases:
+        - Maximum Time to Trip
     _unit: ms
 Travel Range:
     _aliases:

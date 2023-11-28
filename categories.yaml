@@ -71,24 +71,15 @@ Electronics:
             _aliases:
                 - Rectangular Connector Housings
                 - "Headers & Wire Housings"
+                - FFC, FPC (Flat Flexible) Connector Assemblies
+                - "FFC & FPC Connectors"
+                - FFC/FPC Connectors
             _parameters:
                 - Connector Type
                 - Number of Contacts
                 - Number of Rows
                 - Pitch
         Memory Card Connectors:
-        Pin Headers:
-            _parameters:
-                - Number of Contacts
-                - Number of Rows
-                - Pitch
-        Pin Sockets:
-            _parameters:
-                - Number of Contacts
-                - Number of Rows
-                - Pitch
-            _aliases:
-                - Female Headers
         Interface:
             _aliases:
                 - USB, DVI, HDMI Connectors
@@ -96,7 +87,7 @@ Electronics:
                 - Ethernet Connectors
             _description: "Connectors for Digital Interfaces"
             _structural: true
-            _parameters: 
+            _parameters:
                 - Mounting Type
                 - Number of Contacts
             USB-A:
@@ -134,12 +125,14 @@ Electronics:
             Headers:
                 _aliases:
                     - Headers, Male Pins
+                    - Pin Headers
                 _description: "Headers, Male Rectangular Connectors"
                 _parameters:
                     - Shrouding
             Sockets:
                 _aliases:
                     - Headers, Receptacles, Female Sockets
+                    - Female Headers
                 _description: "Sockets, Female Rectangular Connectors"
         Terminal Blocks:
             _parameters:
@@ -179,7 +172,7 @@ Electronics:
                 _aliases:
                     - LED Addressable, Specialty
             Discrete:
-                _aliases: 
+                _aliases:
                     - LED Indication
                     - Standard LEDs - Through Hole
                     - Standard LEDs - SMD
@@ -228,7 +221,7 @@ Electronics:
             _parameters:
                 - Working Voltage
                 - Rated Current
-                - Breakdown Voltage
+                - Reverse Breakdown Voltage
                 - Clamping Voltage
         Zener:
             _aliases:
@@ -240,6 +233,11 @@ Electronics:
     Electromechanical:
         _description: "Electromechanical Components"
         _structural: true
+        Batteries:
+            _parameters:
+                - Battery Capacity
+                - Rated Voltage
+                - Shape
         Breadboards:
             _aliases:
                 - Solderless Breadboards
@@ -250,6 +248,8 @@ Electronics:
         Development Kits:
             _aliases:
                 - Multiprotocol Development Tools
+                - Development Boards & Kits
+                - Development Boards & Kits - ARM
         Encoders:
             _parameters:
                 - Mounting Type
@@ -294,6 +294,7 @@ Electronics:
                 - Rated Voltage
             _aliases:
                 - RF Relays
+                - High Frequency / RF Relays
         Slide Potentiometers:
             _parameters:
                 - Mounting Type
@@ -406,7 +407,7 @@ Electronics:
                     - Number of D/A Converters
         Interface:
             _description: "Interface ICs"
-            _structural: True
+            _structural: true
             Analog Switches:
                 _aliases:
                     - Analog Switches, Multiplexers, Demultiplexers
@@ -419,7 +420,7 @@ Electronics:
                     - Switch Time
                     - Supply Voltage
             Comparators:
-                _structural: True
+                _structural: true
                 _parameters:
                     - Number of Channels
                     - Output Supply Current
@@ -468,7 +469,7 @@ Electronics:
                     - Data Rate
         Logic:
             _description: "Logic ICs"
-            _structural: True
+            _structural: true
             _parameters:
                 - Number of Circuits
                 - Supply Voltage
@@ -490,6 +491,13 @@ Electronics:
                     - Gates and Inverters
                 _parameters:
                     - Type
+            Multivibrators:
+                _aliases:
+                    - Monostable Multivibrator
+                _parameters:
+                    - Propagation Delay Time
+                    - Supply Voltage
+                    - Supply Current
             PLLs:
                 _aliases:
                     - Clock Generators, PLLs, Frequency Synthesizers
@@ -502,6 +510,7 @@ Electronics:
                     - Output Type
             Voltage Level:
                 _aliases:
+                    - Translation - Voltage Levels
                     - Level Shifters
         Memory:
             _description: "Memory ICs"
@@ -543,7 +552,7 @@ Electronics:
                 - Supply Voltage
             _aliases:
                 - Optocouplers - Logic Output
-                - Transistor Output Optocouplrs
+                - Transistor Output Optocouplers
         Power:
             _description: "Power ICs"
             Low Dropout Regulators:
@@ -595,7 +604,6 @@ Electronics:
                     - Reference Type
                     - Tolerance
                     - Temperature Coefficient
-
         TemperatureSensors:
             _description: "Temperature Sensors"
             _aliases:
@@ -631,6 +639,11 @@ Electronics:
                 _description: "Ceramic Capacitors"
                 _parameters:
                     - Temperature Coefficient
+            Tantalum:
+                _aliases:
+                    - Tantalum Capacitors
+                _parameters:
+                    - ESR
             Others:
                 _aliases:
                     - Film Capacitors
@@ -642,11 +655,22 @@ Electronics:
                 - Impedance
                 - Resistance
                 - Rated Current
+        Fuse:
+            _aliases:
+                - Automotive Fuses
+            _parameters:
+                - Trip Current
+                - Hold Current
+                - Time to Trip
+                - Rated Voltage
         Inductors:
             _aliases:
                 - Fixed Inductors
                 - Color Ring Inductors/Through Hole Inductors
                 - Power Inductors - SMD
+                - Power Inductors - Leaded
+                - Power Inductors
+                - RF Inductors - SMD
             _parameters:
                 - Inductance
                 - Tolerance
@@ -692,6 +716,8 @@ Electronics:
             _aliases:
                 - Bipolar Transistors - BJT
                 - Bipolar Transistors - Pre-Biased
+                - BJTs - Bipolar Transistors
+                - BJTs - Bipolar Transistors - Pre-Biased
             NPN:
                 _description: "Bipolar NPN Transistors"
             PNP:

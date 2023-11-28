@@ -29,11 +29,12 @@ def fix_resistor_mounting_type(api_part: ApiPartMock):
         api_part.parameters["Mounting Type"] = "Through Hole"
 
 def fix_transistor_categories(api_part: ApiPartMock):
-    if "BJT" in api_part.category_path[-1] or "Bipolar (BJT)" in api_part.category_path:
+    if "BJT" in api_part.category_path[-1] or "Bipolar" in api_part.category_path[-1] or "Bipolar (BJT)" in api_part.category_path:
         transistor_type = api_part.parameters.get("Transistor Type", "")
-        if "NPN" in transistor_type:
+        fet_pol = api_part.parameters.get("Transistor Polarity", "")
+        if "NPN" in transistor_type or "NPN" in fet_pol:
             api_part.category_path.append("NPN")
-        elif "PNP" in transistor_type:
+        elif "PNP" in transistor_type or "PNP" in fet_pol:
             api_part.category_path.append("PNP")
     elif "JFETs" in api_part.category_path[-1]  or "JFETs" in api_part.category_path:
         fet_type = api_part.parameters.get("FET Type", "")
@@ -64,17 +65,29 @@ def fix_solder_categories(api_part: ApiPartMock):
 
 def fix_usb_connector_categories(api_part: ApiPartMock):
     if api_part.category_path[-1] in {"USB, DVI, HDMI Connectors", "USB Connectors"}:
-        if connector_type := api_part.parameters.get("Connector Type"):
+        starting_category = api_part.category_path[-1]
+        part_connector_type = api_part.parameters.get("Connector Type")
+        part_type = api_part.parameters.get("Type")
+        part_product = api_part.parameters.get("Product")
+        #print(f"Connector: {part_connector_type}, Type: {part_type}, Product: {part_product}")
+        if part_connector_type is not None:
             for subcategory in ("USB-A", "USB-B", "USB-C", "Micro-B"):
-                if subcategory in connector_type:
+                if subcategory in part_connector_type:
                     api_part.category_path.append(subcategory)
                     break
-        elif connector_type := api_part.parameters.get("Type"):
-            if "Type C" in connector_type:
+        if part_type is not None and api_part.category_path[-1] == starting_category:
+            if "Type C" in part_type:
                 api_part.category_path.append("USB-C")
-            elif 'Type B' in connector_type and 'Micro USB Type B' in api_part.parameters.get('Product'):
+            elif 'Type B' in part_type and 'Micro USB Type B' in part_product:
                 # Mouser lists the type as "Type B" but the Product contains Micro...
                 api_part.category_path.append('Micro-B')
+        if part_product is not None and api_part.category_path[-1] == starting_category:
+            if 'Type A' in part_product:
+                api_part.category_path.append("USB-A")
+            elif 'Type B' in part_product:
+                api_part.category_path.append("USB-B")
+            elif 'Type C' in part_product:
+                api_part.category_path.append("USB-C")
 
 def fix_lcsc_pin_headers(api_part: ApiPartMock):
     if pin_structure := api_part.parameters.get("Pin Structure"):
