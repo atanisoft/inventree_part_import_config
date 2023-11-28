@@ -1,6 +1,7 @@
 .history/
 
 Cache/
+__pycache__
 
 inventree.yaml
 suppliers.yaml

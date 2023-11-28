@@ -256,6 +256,19 @@ Electronics:
                 - Output Type
                 - Pulses per Revolution
                 - Has Switch
+        Fan:
+            _aliases:
+                - Fans
+                - DC Fans
+                - AC Fans
+                - "Fans, Blowers & Accessories"
+            _parameters:
+                - Connector Type
+                - Size
+                - Rated Voltage
+                - Type
+                - Airflow
+                - Speed
         Fuse Holders:
             _aliases:
                 - Fuseholders
