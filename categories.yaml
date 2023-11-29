@@ -629,6 +629,10 @@ Electronics:
                     - Reference Type
                     - Tolerance
                     - Temperature Coefficient
+        PressureSensors:
+            _description: "Pressure Sensors"
+            _aliases:
+                - Pressure Sensors, Transducers
         TemperatureSensors:
             _description: "Temperature Sensors"
             _aliases:
