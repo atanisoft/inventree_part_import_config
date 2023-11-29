@@ -62,7 +62,7 @@ Dropout Voltage:
 Duplex:
 EEPROM Size:
 Efficiency:
-    _unit: "%"
+    _unit: '%'
 ESR:
     _aliases:
         - ESR (Equivalent Series Resistance)
@@ -71,6 +71,7 @@ Filament:
 FLASH Size:
     _aliases:
         - Program Memory Size
+        - Memory Size
 Flux Type:
 Forward Voltage:
     _aliases:
@@ -388,7 +389,7 @@ Temperature Coefficient:
         - Class
 Thread Size:
 Tolerance:
-    _unit: "%"
+    _unit: '%'
 Time to Trip:
     _aliases:
         - Maximum Time to Trip

@@ -79,6 +79,13 @@ Electronics:
                 - Number of Contacts
                 - Number of Rows
                 - Pitch
+        Edge Connectors:
+            _aliases:
+                - Card Edge Connectors
+                - PCI Connectors
+                - Edgeboard connectors
+            _parameters:
+                - Number of Contacts
         Memory Card Connectors:
         Interface:
             _aliases:
@@ -165,6 +172,10 @@ Electronics:
             - Mounting Type
             - Package Type
             - Forward Voltage
+        Bridge Rectifiers:
+            _parameters:
+                - Reverse Breakdown Voltage
+                - Rated Current
         LEDs:
             _parameters:
                 - Color
@@ -544,6 +555,7 @@ Electronics:
                 - Multiprotocol Modules
                 - RF System on a Chip - SoC
                 - Microcontroller Units (MCUs/MPUs/SOCs)
+                - RF Transceiver Modules and Modems
         Motor Drivers:
             _aliases:
                 - Motor Drivers, Controllers
@@ -754,6 +766,7 @@ Electronics:
                 - Transistor Polarity
             _aliases:
                 - MOSFET
+                - FET, MOSFET Arrays
             N-Channel MOSFETs:
             P-Channel MOSFETs:
 Mechanical:
