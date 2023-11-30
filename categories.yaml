@@ -1,5 +1,5 @@
 Electronics:
-    _description: "Electronic Components"
+    _description: Electronic Components
     _structural: true
     Antennas:
         _parameters:
@@ -10,7 +10,7 @@ Electronics:
     Cables and Wires:
         _structural: true
         Cable Assemblies:
-            _description: "Terminated, Assembled Cables"
+            _description: Terminated, Assembled Cables
             _parameters:
                 - Length
                 - Number of Conductors
@@ -70,9 +70,9 @@ Electronics:
         Connector Housings:
             _aliases:
                 - Rectangular Connector Housings
-                - "Headers & Wire Housings"
+                - Headers & Wire Housings
                 - FFC, FPC (Flat Flexible) Connector Assemblies
-                - "FFC & FPC Connectors"
+                - FFC & FPC Connectors
                 - FFC/FPC Connectors
             _parameters:
                 - Connector Type
@@ -92,7 +92,7 @@ Electronics:
                 - USB, DVI, HDMI Connectors
                 - USB Connectors
                 - Ethernet Connectors
-            _description: "Connectors for Digital Interfaces"
+            _description: Connectors for Digital Interfaces
             _structural: true
             _parameters:
                 - Mounting Type
@@ -103,7 +103,7 @@ Electronics:
             USB-C:
             Ethernet:
                 _aliases:
-                    - "Modular Connectors / Ethernet Connectors"
+                    - Modular Connectors / Ethernet Connectors
                 _parameters:
                     - Cable Entry
                     - Rated Current
@@ -111,7 +111,7 @@ Electronics:
         Jumpers:
             _aliases:
                 - Shunts, Jumpers
-            _description: "Jumpers, Shunts"
+            _description: Jumpers, Shunts
             _parameters:
                 - Number of Contacts
                 - Pitch
@@ -133,14 +133,15 @@ Electronics:
                 _aliases:
                     - Headers, Male Pins
                     - Pin Headers
-                _description: "Headers, Male Rectangular Connectors"
+                    - Wire To Board / Wire To Wire Connector
+                _description: Headers, Male Rectangular Connectors
                 _parameters:
                     - Shrouding
             Sockets:
                 _aliases:
                     - Headers, Receptacles, Female Sockets
                     - Female Headers
-                _description: "Sockets, Female Rectangular Connectors"
+                _description: Sockets, Female Rectangular Connectors
         Terminal Blocks:
             _parameters:
                 - Mounting Type
@@ -202,17 +203,18 @@ Electronics:
                     - Common Pin
                     - Wavelength
         Schottky:
-            _description: "Schottky Diodes"
+            _description: Schottky Diodes
             _parameters:
                 - Reverse Breakdown Voltage
                 - Rated Current
             _aliases:
-                - "Schottky Diodes & Rectifiers"
+                - Schottky Diodes & Rectifiers
+                - Schottky Barrier Diodes (SBD)
         Standard:
             _aliases:
                 - Single Diodes
                 - Diode Arrays
-            _description: "Standard Rectifier Diodes, Small Signal Diodes"
+            _description: Standard Rectifier Diodes, Small Signal Diodes
             _parameters:
                 - Reverse Breakdown Voltage
                 - Rated Current
@@ -220,15 +222,16 @@ Electronics:
             _aliases:
                 - Diodes - General Purpose, Power, Switching
                 - Switching Diode
-            _description: "Switching Diodes"
+            _description: Switching Diodes
             _parameters:
                 - Reverse Breakdown Voltage
                 - Rated Current
         TVS:
             _aliases:
-                - "ESD Suppressors / TVS Diodes"
+                - ESD Suppressors / TVS Diodes
                 - Transient Voltage Suppressors (TVS)
-            _description: "Transient-Voltage-Suppression Diodes"
+                - ESD Protection Devices
+            _description: Transient-Voltage-Suppression Diodes
             _parameters:
                 - Working Voltage
                 - Rated Current
@@ -237,12 +240,12 @@ Electronics:
         Zener:
             _aliases:
                 - Zener Diodes
-            _description: "Zener Diodes"
+            _description: Zener Diodes
             _parameters:
                 - Reverse Breakdown Voltage
                 - Rated Power
     Electromechanical:
-        _description: "Electromechanical Components"
+        _description: Electromechanical Components
         _structural: true
         Batteries:
             _parameters:
@@ -272,7 +275,7 @@ Electronics:
                 - Fans
                 - DC Fans
                 - AC Fans
-                - "Fans, Blowers & Accessories"
+                - Fans, Blowers & Accessories
             _parameters:
                 - Connector Type
                 - Size
@@ -382,7 +385,7 @@ Electronics:
             - Mounting Type
             - Package Type
         Amplifiers:
-            _description: "Amplifier ICs"
+            _description: Amplifier ICs
             _structural: true
             _parameters:
                 - Number of Circuits
@@ -396,17 +399,17 @@ Electronics:
             Operational Amplifiers:
                 _aliases:
                     - Operational Amplifier
-                    - "Operational Amplifiers - Op Amps"
+                    - Operational Amplifiers - Op Amps
             Instrumentation Amplifiers:
         BatteryManagement:
-            _description: "Battery Management ICs"
+            _description: Battery Management ICs
             _aliases:
                 - Battery Management
                 - Battery Management ICs
         Audio:
-            _description: "Audio ICs"
+            _description: Audio ICs
         Data Acquisition:
-            _description: "Data Acquisition ICs"
+            _description: Data Acquisition ICs
             _structural: true
             _parameters:
                 - Number of Bits
@@ -418,19 +421,19 @@ Electronics:
             ADCs:
                 _aliases:
                     - Analog to Digital Converters (ADC)
-                _description: "Analog to Digital Converters"
+                _description: Analog to Digital Converters
                 _parameters:
                     - Sampling Rate
                     - Number of A/D Converters
             DACs:
                 _aliases:
                     - Digital to Analog Converters (DAC)
-                _description: "Digital to Analog Converters"
+                _description: Digital to Analog Converters
                 _parameters:
                     - Settling Time
                     - Number of D/A Converters
         Interface:
-            _description: "Interface ICs"
+            _description: Interface ICs
             _structural: true
             Analog Switches:
                 _aliases:
@@ -486,13 +489,14 @@ Electronics:
                     - Drivers, Receivers, Transceivers
                     - CAN Interface IC
                     - RS-485 Interface IC
+                    - RS-485/RS-422 ICs
                 _parameters:
                     - Protocol
                     - Duplex
                     - Number of Drivers/Receivers
                     - Data Rate
         Logic:
-            _description: "Logic ICs"
+            _description: Logic ICs
             _structural: true
             _parameters:
                 - Number of Circuits
@@ -525,7 +529,7 @@ Electronics:
             PLLs:
                 _aliases:
                     - Clock Generators, PLLs, Frequency Synthesizers
-                _description: "Phase-Locked Loops"
+                _description: Phase-Locked Loops
                 _parameters:
                     - Frequency
             Shift Registers:
@@ -537,7 +541,7 @@ Electronics:
                     - Translation - Voltage Levels
                     - Level Shifters
         Memory:
-            _description: "Memory ICs"
+            _description: Memory ICs
         Microcontrollers:
             _parameters:
                 - Processor Type
@@ -561,7 +565,7 @@ Electronics:
                 - Motor Drivers, Controllers
                 - Motor Driver ICs
                 - Ignition Controllers & Drivers
-                - "Motor / Motion / Ignition Controllers & Drivers"
+                - Motor / Motion / Ignition Controllers & Drivers
             _parameters:
                 - Motor Type
                 - Output Current
@@ -579,7 +583,7 @@ Electronics:
                 - Optocouplers - Logic Output
                 - Transistor Output Optocouplers
         Power:
-            _description: "Power ICs"
+            _description: Power ICs
             Low Dropout Regulators:
                 _aliases:
                     - Linear, Low Drop Out (LDO) Regulators
@@ -630,15 +634,15 @@ Electronics:
                     - Tolerance
                     - Temperature Coefficient
         PressureSensors:
-            _description: "Pressure Sensors"
+            _description: Pressure Sensors
             _aliases:
                 - Pressure Sensors, Transducers
         TemperatureSensors:
-            _description: "Temperature Sensors"
+            _description: Temperature Sensors
             _aliases:
                 - Board Mount Temperature Sensors
     Passives:
-        _description: "Passive Components"
+        _description: Passive Components
         _structural: true
         _parameters:
             - Mounting Type
@@ -655,7 +659,7 @@ Electronics:
                     - Aluminum Electrolytic Capacitors - SMD
                     - Aluminum Electrolytic Capacitors - Leaded
                     - Electrolyte Capacitors
-                _description: "Aluminum Electrolytic Capacitors"
+                _description: Aluminum Electrolytic Capacitors
                 _parameters:
                     - Polarization
                     - ESR
@@ -665,7 +669,7 @@ Electronics:
                     - Ceramic Disc Capacitors
                     - Multilayer Ceramic Capacitors MLCC - SMD/SMT
                     - Multilayer Ceramic Capacitors MLCC - Leaded
-                _description: "Ceramic Capacitors"
+                _description: Ceramic Capacitors
                 _parameters:
                     - Temperature Coefficient
             Tantalum:
@@ -676,7 +680,7 @@ Electronics:
             Others:
                 _aliases:
                     - Film Capacitors
-                _description: "Various Capacitors"
+                _description: Various Capacitors
         Ferrite Beads:
             _aliases:
                 - Ferrite Beads and Chips
@@ -735,7 +739,7 @@ Electronics:
             - Mounting Type
             - Package Type
         Bipolar:
-            _description: "Bipolar Transistors"
+            _description: Bipolar Transistors
             _structural: true
             _parameters:
                 - Gain (hFE)
@@ -748,11 +752,11 @@ Electronics:
                 - BJTs - Bipolar Transistors
                 - BJTs - Bipolar Transistors - Pre-Biased
             NPN:
-                _description: "Bipolar NPN Transistors"
+                _description: Bipolar NPN Transistors
             PNP:
-                _description: "Bipolar PNP Transistors"
+                _description: Bipolar PNP Transistors
         JFETs:
-            _description: "Junction-Gate Field-Effect Transistors"
+            _description: Junction-Gate Field-Effect Transistors
             _structural: true
             _parameters:
                 - On Resistance
@@ -761,7 +765,7 @@ Electronics:
             N-Channel JFETs:
             P-Channel JFETs:
         MOSFETs:
-            _description: "Metal-Oxide-Semiconductor Field-Effect Transistors"
+            _description: Metal-Oxide-Semiconductor Field-Effect Transistors
             _structural: true
             _parameters:
                 - On Resistance
@@ -773,6 +777,14 @@ Electronics:
                 - FET, MOSFET Arrays
             N-Channel MOSFETs:
             P-Channel MOSFETs:
+    User Interfaces:
+        _structural: true
+        _parameters:
+            - Interface
+            - Size
+        LCD:
+        OLED:
+        TFT:
 Mechanical:
     _structural: true
     Hardware:
@@ -793,8 +805,8 @@ Mechanical:
                 - Plating
         Standoffs:
             _aliases:
-                - "Standoffs & Spacers"
-                - "Board Spacers, Standoffs"
+                - Standoffs & Spacers
+                - Board Spacers, Standoffs
         Washers:
     Heat Sinks:
     Optical:
@@ -825,13 +837,13 @@ Packaging Material:
         _parameters:
             - Size
 PCBs:
-    _description: "Printed Circuit Boards"
+    _description: Printed Circuit Boards
 PCB Stencils:
-    _description: "Stencils for Printed Circuit Boards"
+    _description: Stencils for Printed Circuit Boards
 Products:
     _ignore: true
 Solder:
-    _description: "Solder Wire and Paste"
+    _description: Solder Wire and Paste
     _structural: true
     _parameters:
         - Composition

@@ -67,6 +67,7 @@ ESR:
     _aliases:
         - ESR (Equivalent Series Resistance)
         - Equivalent Series Resistance(ESR)
+        - Equivalent Series Resistance (ESR)
 Filament:
 FLASH Size:
     _aliases:
@@ -78,6 +79,7 @@ Forward Voltage:
         - Voltage - Forward (Vf) (Typ)
         - Voltage - Forward (Vf) (Max) @ If
         - Vf - Forward Voltage
+        - Forward Voltage (Vf@If)
     _unit: V
 Frequency:
     _aliases:
@@ -157,6 +159,7 @@ Motor Type:
     _aliases:
         - Motor Type - AC, DC
         - Motor Type - Stepper
+        - Type
 Mounting Type:
     _aliases:
         - Mounting Style
@@ -190,6 +193,8 @@ Number of Contacts:
         - Number of PINs Per Row
 Number of D/A Converters:
 Number of Drivers/Receivers:
+    _aliases:
+        - Driver/receiver
 Number of IO Pins:
     _aliases:
         - Number of I/O
@@ -214,6 +219,7 @@ Output Current:
         - Current - Output (Max)
         - Current - Output / Channel
         - Current - Output High, Low
+        - Output Current (Max)
     _unit: A
 Output Supply Current:
     _aliases:
@@ -315,6 +321,7 @@ Rated Voltage:
         - Maximum Voltage
         - Load Voltage Rating
         - Operating Voltage (Max)
+        - Supply Voltage
     _unit: V
 Reference Type:
 Resistance:
@@ -323,6 +330,7 @@ Resistance:
         - DC Resistance (DCR) (Max)
         - Resistor
         - Resistor Values
+        - DC Resistance
     _unit: ohm
 Reverse Breakdown Voltage:
     _aliases:
@@ -413,6 +421,7 @@ Wavelength:
         - Wavelength/Colour Temperature
         - Wavelength/Color Temperature
         - Wavelength - Peak
+        - Dominant Wavelength
     _unit: nm
 Working Voltage:
     _aliases:
