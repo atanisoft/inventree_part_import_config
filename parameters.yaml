@@ -80,6 +80,7 @@ Forward Voltage:
         - Voltage - Forward (Vf) (Max) @ If
         - Vf - Forward Voltage
         - Forward Voltage (Vf@If)
+        - Forward Voltage (VF)
     _unit: V
 Frequency:
     _aliases:
@@ -121,6 +122,7 @@ Has Switch:
 Hold Current:
     _aliases:
         - Current - Hold (Ih) (Max)
+        - Current Rating (Amps)
     _unit: mA
 Impedance:
     _aliases:
@@ -283,6 +285,8 @@ Rated Current:
         - If - Forward Current
         - Maximum DC Collector Current
         - Continuous Collector Current
+        - Average Rectified Current (Io)
+        - Current - UL
     _unit: A
 Rated Power:
     _aliases:
@@ -322,6 +326,8 @@ Rated Voltage:
         - Load Voltage Rating
         - Operating Voltage (Max)
         - Supply Voltage
+        - Coil Voltage
+        - Voltage - UL
     _unit: V
 Reference Type:
 Resistance:
@@ -340,6 +346,7 @@ Reverse Breakdown Voltage:
         - Vr - Reverse Voltage
         - Peak Reverse Voltage
         - Breakdown Voltage
+        - Reverse Voltage (Vr)
     _unit: V
 Rotation Angle:
     _aliases:
@@ -410,6 +417,7 @@ Travel Range:
 Trip Current:
     _aliases:
         - Current - Trip (It)
+        - Current Rating
     _unit: mA
 Type:
     _aliases:

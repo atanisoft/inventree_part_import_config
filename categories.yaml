@@ -87,6 +87,8 @@ Electronics:
             _parameters:
                 - Number of Contacts
         Memory Card Connectors:
+            _aliases:
+                - PC Card Sockets
         Interface:
             _aliases:
                 - USB, DVI, HDMI Connectors
@@ -264,6 +266,9 @@ Electronics:
                 - Multiprotocol Development Tools
                 - Development Boards & Kits
                 - Development Boards & Kits - ARM
+        Development Tools:
+            _aliases:
+                - Amplifier IC Development Tools
         Encoders:
             _parameters:
                 - Mounting Type
@@ -540,6 +545,7 @@ Electronics:
                 _aliases:
                     - Translation - Voltage Levels
                     - Level Shifters
+                    - Translators / Level Shifters
         Memory:
             _description: Memory ICs
         Microcontrollers:
